@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      
+    - name: Create docs folder if missing
+      run: mkdir -p docs
 
     - name: Set up Python
       uses: actions/setup-python@v4
