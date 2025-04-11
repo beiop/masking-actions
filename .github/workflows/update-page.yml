@@ -22,7 +22,7 @@ jobs:
         python-version: '3.11'
 
     - name: Run script
-      run: python your_script.py
+      run: python main-script.py
 
     - name: Commit and push
       run: |
