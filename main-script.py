@@ -40,7 +40,7 @@ def generate_html_report(results):
         f.write("<html><head><title>MCPI Server Status</title>")
         f.write('<style>body{font-family:sans-serif;padding:1em;}li{margin:.5em 0;}</style>')
         f.write("</head><body>")
-        f.write(f"<p>Last updated: {timestamp}</p>")
+        f.write(f"<h1>MCPI Server Status</h1><p>Last updated: {timestamp}</p>")
         for server, status in results:
             f.write(f"<li><strong>{server}</strong>: {status}</li>")
         f.write("</ul></body></html>")
