@@ -1,5 +1,8 @@
 import socket, struct, random, time
-from datetime import datetime
+from datetime import datetime, timezone
+
+now = datetime.now(timezone.utc)
+timestamp = now.strftime("%Y-%m-%d %H:%M UTC")
 
 def chechubben(server, timeout=5):
     udp_socket = None
@@ -30,13 +33,17 @@ def chechubben(server, timeout=5):
         if udp_socket:
             udp_socket.close()
 
+with open("docs/index.html", "w", encoding="utf-8") as f:
+    
+
 def generate_html_report(results):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write("<html><head><title>MCPI Server Status</title>")
-        f.write('<style>body{font-family:sans-serif;padding:1em;}li{margin:.5em 0;}</style>')
+        #f.write('<style>body{font-family:sans-serif;padding:1em;}li{margin:.5em 0;}</style>')
         f.write("</head><body>")
         f.write(f"<h1>MCPI Server Status</h1><p>Last updated: {now}</p><ul>")
+        f.write(f"<p>Last updated: {timestamp}</p>")
         for server, status in results:
             f.write(f"<li><strong>{server}</strong>: {status}</li>")
         f.write("</ul></body></html>")
