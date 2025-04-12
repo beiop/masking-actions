@@ -28,6 +28,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git fetch origin
+        git rebase origin/main || git pull origin main --rebase
         git add docs/index.html
         git commit -m "Auto-update MCPI server status page" || echo "No changes to commit"
         git push
