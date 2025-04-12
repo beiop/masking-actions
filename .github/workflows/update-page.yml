@@ -2,8 +2,8 @@ name: Update MCPI Server Status Page
 
 on:
   schedule:
-  - cron: '0 0 * * *'  # every day at 00:00 UTC
-  workflow_dispatch:      # manual trigger
+    - cron: '*/30 * * * *'  # every 30 minutes
+  workflow_dispatch:        # manual trigger
 
 jobs:
   update:
