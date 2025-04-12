@@ -33,9 +33,6 @@ def chechubben(server, timeout=5):
         if udp_socket:
             udp_socket.close()
 
-with open("docs/index.html", "w", encoding="utf-8") as f:
-    
-
 def generate_html_report(results):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     with open("docs/index.html", "w", encoding="utf-8") as f:
