@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 now = datetime.now(timezone.utc)
 timestamp = now.strftime("%Y-%m-%d %H:%M UTC")
 
-def chechubben(server, timeout=5):
+def chechubben(server, timeout=25):
     udp_socket = None
     try:
         if ":" in server:
